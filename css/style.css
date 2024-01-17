@@ -1,0 +1,593 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 100px;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  background-color: #343a40;
+  align-items: center;
+  color: #e7e9ea;
+  font-family: "Poppins", sans-serif;
+  z-index: 1;
+}
+
+nav h2 {
+  display: flex;
+  /* flex: 1; */
+  padding-left: 85px;
+  font-size: 20px;
+  height: 60px;
+  width: 34%;
+  align-items: center;
+  background-color: #343a40;
+}
+
+/* Menu Toggle */
+
+.menu-toggle {
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+  left: 45px;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  top: -3px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  /* left: 16px; */
+  margin-bottom: 1px;
+  background-color: #d0d0d0;
+  position: relative;
+  border-radius: 3px;
+  transition: 1s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+  /* transition: 1s; */
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+  /* transition: 1s; */
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: #d0d0d0;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: #d0d0d0;
+  transform: rotate(-45deg) translate(-1px, 1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+  opacity: 0;
+}
+
+nav ul {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 35%;
+  height: 100vh;
+  padding: 60px 34px;
+  gap: 40px;
+  justify-content: start;
+  flex-direction: column;
+  background-color: #343a40;
+  z-index: -1;
+  transform: translateX(-100%);
+  transition: all 0.5s;
+  box-shadow: 3px 0px 7px rgba(32, 32, 32, 0.75);
+  overflow: auto;
+  /* opacity: 0; */
+}
+
+nav ul::-webkit-scrollbar {
+  width: 10px;
+}
+
+nav ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+nav ul::-webkit-scrollbar-thumb {
+  background: #272f33;
+  border-radius: 5px;
+}
+
+nav ul a {
+  color: #d0d0d0;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  display: flex;
+  position: absolute;
+  right: 30px;
+}
+nav ul.slide {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* End Nav */
+
+ul .box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  background-color: #272f33;
+  padding: 30px;
+  border-radius: 2px;
+  border-block-end: 2px solid #d0d0d0;
+  margin-bottom: 35px;
+}
+
+.box a button {
+  font-family: "Poppins", sans-serif;
+  padding: 3px 7px;
+}
+
+p.judul {
+  color: #2ca4ab;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+p.des {
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.menu {
+  height: 290px;
+}
+
+.menu p {
+  color: #2ca4ab;
+  font-size: 19px;
+}
+
+.menu a {
+  display: block;
+  border-block-end: 1.5px solid #4f565b;
+  padding: 10px 0;
+  transition: all 0.2s;
+}
+
+.menu a#home {
+  border-block-start: 1.5px solid #4f565b;
+}
+
+a svg {
+  fill: #414344;
+  transition: all 0.2s;
+  margin-right: 10px;
+}
+
+.menu a:hover svg {
+  fill: #e7e9ea;
+}
+
+.sumber {
+  height: 200px;
+}
+
+.sumber p {
+  color: #2ca4ab;
+  font-size: 19px;
+}
+
+.sumber a {
+  display: block;
+  border-block-end: 1.5px solid #4f565b;
+  padding: 10px 0;
+}
+
+.sumber a#first {
+  border-block-start: 1.5px solid #4f565b;
+}
+
+.sumber a:hover svg {
+  fill: #e7e9ea;
+}
+
+/* Header Start */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  background-image: url(../img/Banner.png);
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+header svg {
+  fill: white;
+  height: 180px;
+}
+
+.input {
+  display: flex;
+  margin-top: 50px;
+  width: 500px;
+  height: 50px;
+}
+
+.input input {
+  height: 100%;
+  width: 88%;
+  padding: 5px 10px 5px 20px;
+  outline: none;
+  border: none;
+  border-radius: 23px 0px 0px 23px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+.button-search {
+  position: relative;
+  display: flex;
+  width: 12%;
+  height: 100%;
+  border: none;
+  background-color: #2ca4ab;
+  border-radius: 0px 23px 23px 0px;
+  cursor: pointer;
+  /* outline: none; */
+  /* z-index: -1; */
+}
+
+.button-search svg {
+  position: absolute;
+  /* background-color: red; */
+  width: 23px;
+  left: 25%;
+  height: 50px;
+}
+
+.surah {
+  display: flex;
+  margin-top: 30px;
+  gap: 13px;
+  height: fit-content;
+  /* background-color: red; */
+  width: 600px;
+}
+
+.surah button {
+  width: calc(100% / 4);
+  height: 35px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.surah button a {
+  text-decoration: none;
+  color: #1f2125;
+}
+
+main {
+  min-height: 800px;
+  background-color: #1f2125;
+  height: fit-content;
+  padding: 65px 100px;
+}
+
+article {
+  font-family: "Poppins", sans-serif;
+  background-color: #272f33;
+  height: fit-content;
+  width: 100%;
+  border-radius: 9px;
+  padding: 30px 50px 40px 50px;
+  margin-bottom: 50px;
+}
+
+article h2 {
+  color: #2ca4ab;
+  font-size: 25px;
+}
+
+article p {
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+article p a {
+  color: #6a4e78;
+}
+
+article a button {
+  padding: 7px 13px;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Read Al Quran Start */
+.baca {
+  margin-top: 80px;
+  font-family: "Poppins", sans-serif;
+}
+
+.baca .head h2 {
+  font-size: 30px;
+  color: #2ca4ab;
+  margin-bottom: 50px;
+}
+
+.body-alquran {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #343a40;
+  height: 75px;
+  padding: 20px;
+  width: calc(100% / 3 - 10px);
+  border-radius: 4px;
+  cursor: pointer;
+  /* transition: all 0.3s; */
+}
+
+.box-number {
+  flex: 0.2;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #363f44;
+  width: 43px;
+  height: 43px;
+  border-radius: 3px;
+  transform: rotate(45deg);
+  /* transition: all 0.3s; */
+}
+
+.number span {
+  transform: rotate(-45deg);
+  color: #e7e9ea;
+  /* transition: all 0.3s; */
+}
+
+.name {
+  display: flex;
+  flex: 0.5;
+  justify-content: start;
+  flex-direction: column;
+  margin-left: 7px;
+  font-family: "Poppins", sans-serif;
+}
+
+.name-surah {
+  color: #e7e9ea;
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 550;
+}
+
+.arti-surah {
+  font-size: 13px;
+  color: #6e7477;
+  margin-top: -5px;
+  /* transition: all 0.3s; */
+}
+
+.ayat {
+  display: flex;
+  flex: 0.3;
+  flex-direction: column;
+  align-items: end;
+  /* transition: all 0.3s; */
+}
+
+.name-ayat {
+  color: #fff;
+}
+
+.jumlah-ayat {
+  color: #6e7477;
+  font-size: 13px;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  .number span {
+    color: #272f33;
+  }
+  .number {
+    background-color: #2ca4ab;
+  }
+  .jumlah-ayat {
+    color: #2ca4ab;
+  }
+  .arti-surah {
+    color: #2ca4ab;
+  }
+  border: 1px solid #2ca4ab;
+  background-color: #092b2d;
+}
+
+footer {
+  padding: 15px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  color: #e7e9ea;
+  flex-direction: column;
+  background-color: #272f33;
+}
+
+@media screen and (max-width: 430px) {
+  .menu-toggle {
+    left: 20px;
+  }
+  .menu-toggle input {
+    left: -5px;
+  }
+  nav h2 {
+    width: 64%;
+
+    font-size: 18px;
+    padding-left: 60px;
+  }
+  nav ul {
+    padding: 60px 5px;
+    width: 65%;
+  }
+  ul .box {
+    padding: 15px;
+  }
+  .box a button {
+    font-size: 11px;
+    padding: 3px 7px;
+  }
+  p.des {
+    font-size: 12px;
+  }
+  .menu {
+    padding: 7px;
+  }
+  .menu p {
+    font-size: 18px;
+  }
+  .menu a {
+    font-size: 14px;
+  }
+  .sumber {
+    padding: 7px;
+  }
+  .sumber p {
+    color: #2ca4ab;
+    font-size: 19px;
+  }
+  .sumber a {
+    display: block;
+    border-block-end: 1.5px solid #4f565b;
+    padding: 10px 0;
+  }
+  .sumber a#first {
+    border-block-start: 1.5px solid #4f565b;
+  }
+  .sumber a:hover svg {
+    fill: #e7e9ea;
+  }
+  header svg {
+    height: 130px;
+  }
+  .input {
+    width: 85%;
+    height: 45px;
+  }
+  .input input {
+    width: 85%;
+  }
+  .button-search {
+    width: 16%;
+  }
+  .button-search svg {
+    top: -2px;
+  }
+  .surah {
+    flex-wrap: wrap;
+    width: 85%;
+    /* background-color: #fff; */
+    justify-content: space-between;
+  }
+  .surah button {
+    width: calc(95% / 2);
+    min-height: 30px;
+    height: fit-content;
+  }
+  .surah button a {
+    font-size: 10px;
+  }
+  main {
+    padding: 65px 5px;
+  }
+  article {
+    padding: 30px 15px 40px 15px;
+  }
+  article p {
+    font-size: 13px;
+  }
+  article button {
+    font-size: 13px;
+  }
+  .baca {
+    margin-top: 30px;
+    padding: 5px;
+    /* font-family: "Poppins", sans-serif; */
+  }
+  .baca .head h2 {
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+  .body-alquran {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid #343a40;
+    height: 75px;
+    padding: 20px;
+    width: calc(100% / 1);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+}

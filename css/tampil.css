@@ -1,0 +1,495 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 100px;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #272f33;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #929191;
+  border-radius: 3px;
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  background-color: #343a40;
+  align-items: center;
+  color: #e7e9ea;
+  font-family: "Poppins", sans-serif;
+  z-index: 1;
+}
+
+nav h2 {
+  display: flex;
+  /* flex: 1; */
+  padding-left: 85px;
+  font-size: 20px;
+  height: 60px;
+  width: 34%;
+  align-items: center;
+  background-color: #343a40;
+}
+
+/* Menu Toggle */
+
+.menu-toggle {
+  /* display: none; */
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+  left: 45px;
+  /* background-color: #fff; */
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  /* left: 10px; */
+  /* right: 24px; */
+  top: -3px;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  /* left: 16px; */
+  margin-bottom: 1px;
+  background-color: #d0d0d0;
+  position: relative;
+  border-radius: 3px;
+  transition: 1s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+  /* transition: 1s; */
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+  /* transition: 1s; */
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: #d0d0d0;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: #d0d0d0;
+  transform: rotate(-45deg) translate(-1px, 1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+  opacity: 0;
+}
+
+nav ul {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 35%;
+  height: 100vh;
+  padding: 60px 34px;
+  gap: 40px;
+  justify-content: start;
+  flex-direction: column;
+  background-color: #343a40;
+  z-index: -1;
+  transform: translateX(-100%);
+  transition: all 0.5s;
+  box-shadow: 3px 0px 7px rgba(32, 32, 32, 0.75);
+  overflow: auto;
+  /* opacity: 0; */
+}
+
+nav ul::-webkit-scrollbar {
+  width: 10px;
+}
+
+nav ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+nav ul::-webkit-scrollbar-thumb {
+  background: #272f33;
+  border-radius: 5px;
+}
+
+nav ul a {
+  color: #d0d0d0;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  display: flex;
+  position: absolute;
+  right: 30px;
+}
+nav ul.slide {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* End Nav */
+
+ul .box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  background-color: #272f33;
+  padding: 30px;
+  border-radius: 2px;
+  border-block-end: 2px solid #d0d0d0;
+  margin-bottom: 35px;
+}
+
+.box a button {
+  font-family: "Poppins", sans-serif;
+  padding: 3px 7px;
+}
+
+p.judul {
+  color: #2ca4ab;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+p.des {
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.menu {
+  height: 300px;
+}
+
+.menu p {
+  color: #2ca4ab;
+  font-size: 19px;
+}
+
+.menu a {
+  display: block;
+  border-block-end: 1.5px solid #4f565b;
+  padding: 10px 0;
+  transition: all 0.2s;
+}
+
+.menu a#home {
+  border-block-start: 1.5px solid #4f565b;
+}
+
+a svg {
+  fill: #414344;
+  transition: all 0.2s;
+  margin-right: 10px;
+}
+
+.menu a:hover svg {
+  fill: #e7e9ea;
+}
+
+.sumber {
+  height: 200px;
+}
+
+.sumber p {
+  color: #2ca4ab;
+  font-size: 19px;
+}
+
+.sumber a {
+  display: block;
+  border-block-end: 1.5px solid #4f565b;
+  padding: 10px 0;
+}
+
+.sumber a#first {
+  border-block-start: 1.5px solid #4f565b;
+}
+
+.sumber a:hover svg {
+  fill: #e7e9ea;
+}
+
+/* Header start */
+
+main {
+  min-height: 2000px;
+  background-color: #1f2125;
+  height: fit-content;
+  padding: 75px 80px;
+}
+
+.head {
+  font-family: "Poppins", sans-serif;
+  background-color: #272f33;
+  height: fit-content;
+  width: 100%;
+  border-radius: 9px;
+  padding: 30px 50px 30px 50px;
+  margin-bottom: 10px;
+}
+
+.tittle {
+  display: flex;
+  width: 100%;
+  color: #f3f0f0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tittle svg {
+  margin-bottom: 20px;
+}
+
+p.nama {
+  display: flex;
+  padding-bottom: 20px;
+  width: 100%;
+  justify-content: center;
+  border-block-end: 2px solid #929191;
+}
+
+p.deskripsi {
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+.pilih {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.pilih .button {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 4px 13px;
+  height: fit-content;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  color: #1f2125;
+  border-radius: 5px;
+  background-color: #fff;
+  width: fit-content;
+  text-decoration: none;
+  outline: none;
+}
+
+.pilih a {
+  display: flex;
+  color: #d0d0d0;
+}
+
+.pilih a svg {
+  position: relative;
+  top: 4px;
+  fill: #d0d0d0;
+  margin-right: 7px;
+}
+
+.isi {
+  width: 100%;
+  height: fit-content;
+  background-color: #272f33;
+  font-family: "Poppins", sans-serif;
+  /* height: fit-content; */
+  border-radius: 9px;
+  padding: 40px 50px 30px 50px;
+  /* background-color: #fff;  */
+}
+
+.isi .num-ayat {
+  color: #e7e9ea;
+  font-size: 17px;
+  /* background-color: #fff; */
+}
+
+.isi-surah {
+  width: 100%;
+}
+
+.tam {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+
+.isi-surah .arab {
+  /* display: inline; */
+  color: #e7e9ea;
+  font-size: 25px;
+  text-align: right;
+  width: 70%;
+  margin-bottom: 30px;
+}
+
+.isi-surah .arti {
+  padding-bottom: 20px;
+  width: 70%;
+  color: #e7f7f5;
+}
+
+.arti span {
+  font-size: 18px;
+}
+
+.isi-surah figure {
+  margin-bottom: 15px;
+}
+
+.border {
+  width: 100%;
+  height: 2px;
+  background-color: #929191;
+  margin-bottom: 20px;
+}
+
+.button {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.button button {
+  padding: 10px 20px;
+  font-family: "Poppins", sans-serif;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+}
+
+footer {
+  padding: 15px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  color: #e7e9ea;
+  flex-direction: column;
+  background-color: #272f33;
+}
+
+@media screen and (max-width: 430px) {
+  .menu-toggle {
+    left: 20px;
+  }
+  .menu-toggle input {
+    left: -5px;
+  }
+  nav h2 {
+    width: 64%;
+
+    font-size: 18px;
+    padding-left: 60px;
+  }
+  nav ul {
+    padding: 60px 5px;
+    width: 65%;
+  }
+  ul .box {
+    padding: 15px;
+  }
+  .box a button {
+    font-size: 11px;
+    padding: 3px 7px;
+  }
+  p.des {
+    font-size: 12px;
+  }
+  .menu {
+    padding: 7px;
+  }
+  .menu p {
+    font-size: 18px;
+  }
+  .menu a {
+    font-size: 14px;
+  }
+  .sumber {
+    padding: 7px;
+  }
+  .sumber p {
+    color: #2ca4ab;
+    font-size: 19px;
+  }
+  .sumber a {
+    display: block;
+    border-block-end: 1.5px solid #4f565b;
+    padding: 10px 0;
+  }
+  .sumber a#first {
+    border-block-start: 1.5px solid #4f565b;
+  }
+  .sumber a:hover svg {
+    fill: #e7e9ea;
+  }
+  main {
+    background-color: #1f2125;
+    height: fit-content;
+    padding: 75px 5px;
+  }
+  .head {
+    padding: 20px 20px;
+  }
+  .pilih .pilih a {
+    font-size: 15px;
+  }
+  .isi {
+    padding: 40px 30px 30px 30px;
+  }
+  .pilih {
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+  }
+  .audio {
+    width: 100%;
+  }
+  .isi {
+    border-radius: 9px;
+    padding: 40px 20px 30px 20px;
+  }
+  .isi .num-ayat {
+    color: #e7e9ea;
+    font-size: 15px;
+  }
+  .isi-surah .arab {
+    font-size: 23px;
+  }
+  .isi-surah .arti {
+    font-size: 14px;
+  }
+  .arti span {
+    font-size: 15px;
+  }
+}
