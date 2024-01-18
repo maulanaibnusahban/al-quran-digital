@@ -577,17 +577,10 @@ footer {
     justify-content: space-between;
     gap: 10px;
   }
-
   .card {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border: 1px solid #343a40;
-    height: 75px;
-    padding: 20px;
     width: calc(100% / 1);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s;
+  }
+  .notfound {
+    font-size: 15px;
   }
 }

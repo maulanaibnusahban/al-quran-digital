@@ -33,12 +33,12 @@ function tampilData() {
 
 $(".button-search").on("click", function () {
   $(".body-alquran").html("");
-  let input = $("#searchInput").val();
+  let input = $("#searchInput").val().toLowerCase();
   $.getJSON("https://equran.id/api/v2/surat", function (data) {
     let cek = data.data;
     let found = false;
     $.each(cek, function (i, data) {
-      if (input == data.namaLatin) {
+      if (input == data.namaLatin.toLowerCase()) {
         let cek = data.nomor;
         console.log(cek);
         $(".body-alquran").html("");
@@ -66,7 +66,7 @@ $(".button-search").on("click", function () {
         $(".body-alquran").html("");
         $(".body-alquran").append(`
         <div style="width:100%; display:flex; flex-direction: column; align-items:center;">
-        <h2 style="color:#fff;">Nama Surat <span style="color:red;">"${input}"</span> Tidak di Temukan !</h2> 
+        <h2 class="notfound" style="color:#fff;">Nama Surat <span style="color:red;">"${input}"</span> Tidak di Temukan !</h2> 
         <a href="#read" onclick="tampilData()"><button style="padding:8px 15px;  font-weight: bold; font-size:15px; margin-top:20px;">Lihat Semua Surat</button></a>
         </div>
         `);
